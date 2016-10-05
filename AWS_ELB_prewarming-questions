@@ -1,1 +1,31 @@
 # AWS_ELB_prewarming-questions
+1. What is the DNS name for the ELB(s) that require pre-warm?
+
+2. Event start time & date, including timezone?
+
+3. Event end time & date, including timezone?
+
+4. Expected percent of traffic going through the ELB that will be using SSL termination?
+
+5. An approximate percentage increase in traffic, or expected requests/sec that will go through the load balancer (whichever is easier to answer)?
+
+6. If different from current load, what is the average amount of data passing through the ELB per request/response pair? In bytes?
+
+7. Number of Availability Zones that will be enabled on each ELB? Please ensure that there is a back-end instance in each AZ so that the pre-warm can be completed.
+
+
+8. Is the back-end currently scaled to the level it will be during the event?
+- If not, when do you expect to add the required back-end instance count?
+- What type and number of back-end instances are you going to use?
+
+
+9. A description of the traffic pattern you are expecting:
+- Is this a single increase in traffic that will be sustained afterwards, or will there be periods of inactivity followed by high traffic? If there are periods of inactivity, please describe the pattern (e.g. weekly spikes on Monday)
+- Large file uploads/downloads?
+
+
+10. A brief description of your use case?
+- What is driving this traffic? (e.g. application launch, event driven like marketing/product launch/sale, etc)
+
+
+11. Are the back-end instances using persistent connections (keep-alive)?
